@@ -23,16 +23,16 @@ public class BlueRightPipe extends OpenCvPipeline {
             new Point(200, 70),
             new Point(250, 90));
     static final Rect BLeft = new Rect(
-            new Point(80, 70),
-            new Point(120, 95));
+            new Point(0, 0),
+            new Point(150, 200));
     static final double PERCENT_COLOR_THRESHOLD = 0.2;
     public BlueRightPipe(Telemetry t) {telemetry = t;}
 
     @Override
     public Mat processFrame(Mat input) {
         Imgproc.cvtColor(input,mat,Imgproc.COLOR_RGB2HSV);
-        Scalar lowHSV = new Scalar(10,100,20);
-        Scalar highHSV = new Scalar(25,255,255);
+        Scalar lowHSV = new Scalar(0,100,85);  //for red h is 0 for blue it 110
+        Scalar highHSV = new Scalar(10,255,255); //for red h is 10 for blue it is 128
 
         Core.inRange(mat,lowHSV,highHSV,mat);
 
