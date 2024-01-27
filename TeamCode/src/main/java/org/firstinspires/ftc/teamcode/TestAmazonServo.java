@@ -9,6 +9,7 @@ import org.firstinspires.ftc.teamcode.SampleCode.RobotObjects.Gebronics.TestServ
 
 
 @TeleOp(name = "Test Amazon Servo")
+@Disabled
 public class TestAmazonServo extends LinearOpMode{
 
     public TestServo servo;

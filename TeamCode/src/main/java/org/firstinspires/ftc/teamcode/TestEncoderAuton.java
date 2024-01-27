@@ -11,6 +11,7 @@ import org.firstinspires.ftc.teamcode.SampleCode.RobotObjects.EPIC.Mecanum_Wheel
 import org.openftc.easyopencv.OpenCvCamera;
 
 @Autonomous(name = "TestEncodrAuton")
+@Disabled
 public class TestEncoderAuton extends LinearOpMode {
     @Override
     public void runOpMode() throws InterruptedException {

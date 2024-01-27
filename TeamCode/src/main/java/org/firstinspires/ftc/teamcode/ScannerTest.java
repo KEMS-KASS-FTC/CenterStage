@@ -11,43 +11,36 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import org.firstinspires.ftc.teamcode.SampleCode.RobotObjects.EPIC.Mecanum_Wheels;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
+import org.firstinspires.ftc.teamcode.SampleCode.RobotObjects.EPIC.Scanner;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
 
-@TeleOp(name = "Test_TeleOp")
-public class Test_TeleOp extends LinearOpMode {
-    double lefty;
-    double leftx;
-    double righty;
-    double rightx;
-
-
+@TeleOp(name = "AprilTag ScannerTest")
+@Disabled
+public class ScannerTest extends LinearOpMode {
 
     @Override
     public void runOpMode() throws InterruptedException {
-        Mecanum_Wheels wheels = new Mecanum_Wheels(hardwareMap);
 
+        Scanner apTagScanner = new Scanner(hardwareMap);
+        apTagScanner.parent = this;
+        apTagScanner.telemetry = this.telemetry;
+        apTagScanner.initialize();
+        int pos = apTagScanner.getTagId();
 
-        wheels.initialize();
-        wheels.telemetry = telemetry;
-        wheels.parent = this;
-        wheels.leftErrorAdjustment = 0.72;
-        wheels.rightErrorAdjustment = 0.72;
-
-
-
-
-
-
+        telemetry.addData("Tag Id:", pos);
+        telemetry.update();
         waitForStart();
+
         while (opModeIsActive()){
-            lefty = gamepad1.left_stick_y;
-            leftx = gamepad1.left_stick_x;
-            righty = gamepad1.right_stick_y;
-            rightx = -gamepad1.right_stick_x;
-            wheels.move(lefty,righty,leftx,rightx);
+            pos = apTagScanner.getTagId();
+
+            telemetry.addData("Tag Id:", pos);
+            telemetry.update();
+            sleep(2000);
         }
+        apTagScanner.releaseCamera();
     }
 }
