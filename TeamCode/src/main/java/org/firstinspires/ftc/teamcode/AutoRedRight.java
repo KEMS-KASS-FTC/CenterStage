@@ -103,9 +103,10 @@ public class AutoRedRight extends LinearOpMode {
             wheels.encoderDrive(0.45, distance, distance, distance, distance, 2);
             spintake.move(-0.6);
             sleep(2000);
-            distance = -5;
+            spintake.move(0.0);
+            distance = -3;
             wheels.encoderDrive(0.45, distance, distance, distance, distance, 2);
-            distance = -100;
+            distance = -28;
             wheels.encoderDrive(0.6, -distance, distance, distance, -distance, 5);
             sleep(2000);
             slider.slidedown(1.0);
@@ -118,14 +119,25 @@ public class AutoRedRight extends LinearOpMode {
             distance = 17;
             wheels.encoderDrive(0.45, distance, distance, distance, distance, 2);
             sleep(800);
-            distance = -11.5;
+            distance = -10;
             wheels.encoderDrive(0.6, -distance, distance, distance, -distance, 3);
             spintake.move(-0.6);
             sleep(2000);
 
+            spintake.move(0.0);
+            //distance = -3;
+            //wheels.encoderDrive(0.45, distance, distance, distance, distance, 2);
+            distance = -18;
+            wheels.encoderDrive(0.6, -distance, distance, distance, -distance, 5);
+            sleep(2000);
+            slider.slidedown(1.0);
+            sleep(4000);
+            slider.slideup(1.0);
+            sleep(6000);
+
         }
         else {
-            distance = 19;
+            distance = 16;
             wheels.encoderDrive(0.6, distance, distance, distance, distance, 2);
 //            spintake.move(-0.6);
             sleep(800);
@@ -133,6 +145,15 @@ public class AutoRedRight extends LinearOpMode {
             wheels.encoderDrive(0.6, -distance, distance, distance, -distance, 3);
             spintake.move(-0.6);
             sleep(2000);
+
+            spintake.move(0.0);
+            distance = -35;
+            wheels.encoderDrive(0.6, -distance, distance, distance, -distance, 5);
+            sleep(2000);
+            slider.slidedown(1.0);
+            sleep(4000);
+            slider.slideup(1.0);
+            sleep(6000);
 
         }
 

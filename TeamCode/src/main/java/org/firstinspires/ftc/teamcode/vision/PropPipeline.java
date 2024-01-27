@@ -31,8 +31,8 @@ public class PropPipeline implements VisionProcessor {
 
 
 
-    public static int redLeftX = 250;//(int) (815 / 1.5);
-    public static int redLeftY = 360;//(int) (550 / 1.5);
+    public static int redLeftX = 200;//(int) (815 / 1.5);
+    public static int redLeftY = 300;//(int) (550 / 1.5);
 
     public static int redCenterX = 570;//(int) (1365 / 1.5);
     public static int redCenterY = 360;//(int) (475 / 1.5);
@@ -43,11 +43,11 @@ public class PropPipeline implements VisionProcessor {
     public static int blueCenterX = 430;
     public static int blueCenterY = 350;
     /////////////////////////////////////////////////
-    public static int leftWidth =140; //(int) (175 / 1.5);
-    public static int leftHeight = 80;//(int) (100 / 1.5);
+    public static int leftWidth =180; //(int) (175 / 1.5);
+    public static int leftHeight = 180;//(int) (100 / 1.5);
     /////////////////////////////////////////////////
     public static int centerWidth = 120;//(int) (125 / 1.5);
-    public static int centerHeight = 80;//(int) (125 / 1.5);
+    public static int centerHeight = 120;//(int) (125 / 1.5);
     /////////////////////////////////////////////////
     public static double BLUE_TRESHOLD = 100;
     public static double RED_TRESHOLD = 100;
