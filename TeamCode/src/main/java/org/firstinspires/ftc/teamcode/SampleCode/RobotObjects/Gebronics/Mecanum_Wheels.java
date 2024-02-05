@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.SampleCode.RobotObjects.EPIC;
+ package org.firstinspires.ftc.teamcode.SampleCode.RobotObjects.Gebronics;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;

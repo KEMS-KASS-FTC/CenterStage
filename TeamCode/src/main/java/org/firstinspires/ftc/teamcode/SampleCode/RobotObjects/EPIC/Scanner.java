@@ -26,10 +26,10 @@ public class Scanner {
     // UNITS ARE PIXELS
     // NOTE: this calibration is for the C920 webcam at 800x448.
     // You will need to do your own calibration for other configurations!
-    double fx = 578.272;
-    double fy = 578.272;
-    double cx = 402.145;
-    double cy = 221.506;
+    double fx = 200;//578.272;
+    double fy = 112;//578.272;
+    double cx = 600;//402.145;
+    double cy = 336;//221.506;
 
     // UNITS ARE METERS
     double tagsize = 0.166;
@@ -49,7 +49,7 @@ public class Scanner {
 
     }
 
-    public void initialize(){
+    public void  initialize(){
         camera.setPipeline(aprilTagDetectionPipeline);
         camera.openCameraDeviceAsync(new OpenCvCamera.AsyncCameraOpenListener()
         {
@@ -68,6 +68,23 @@ public class Scanner {
         telemetry.setMsTransmissionInterval(50);
     }
 
+    public int getTagId(){
+        int rTag = 0;
+        while (!parent.isStarted() && !parent.isStopRequested()) {
+            ArrayList<AprilTagDetection> currentDetections = aprilTagDetectionPipeline.getLatestDetections();
+
+            if (currentDetections.size() != 0) {
+                for(AprilTagDetection tag : currentDetections)
+                {
+                    //if(tag.id == LEFT || tag.id == RIGHT || tag.id == MIDDLE)
+                    //{
+                        rTag = tag.id;
+                    //}
+                }
+            }
+        }
+        return rTag;
+    }
     public int getParkingSpot(){
 
 

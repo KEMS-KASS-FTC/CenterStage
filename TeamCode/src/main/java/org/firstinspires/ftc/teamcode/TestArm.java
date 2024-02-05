@@ -8,6 +8,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 @Disabled
 
 @TeleOp(name = "TestArm")
+
 public class TestArm extends LinearOpMode{
 
     public Arm2023 arm;
